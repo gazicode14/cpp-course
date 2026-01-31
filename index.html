@@ -69,6 +69,20 @@
       padding: 100px 20px;
       max-width: 1000px;
       margin: auto;
+      position: relative;
+      min-height: 2400px;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 100px;
+      bottom: 100px;
+      width: 4px;
+      background: linear-gradient(to bottom, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff, #5f27cd, #00d2d3, #ff9f43);
+      transform: translateX(-50%);
+      z-index: 0;
     }
 
     /* Glossy glass cards */
@@ -83,13 +97,44 @@
       border: 1px solid rgba(255, 255, 255, 0.15);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
       padding: 30px;
-      margin-bottom: 60px;
       border-radius: 18px;
       opacity: 0;
       transform: translateY(80px) scale(0.95);
       transition: opacity 0.8s ease, transform 0.8s ease;
       position: relative;
       overflow: hidden;
+      position: absolute;
+      width: 40%;
+    }
+
+    .week:nth-child(1) { --line-color: #ff6b6b; top: 100px; left: 5%; text-align: left; }
+    .week:nth-child(2) { --line-color: #4ecdc4; top: 300px; right: 5%; text-align: right; }
+    .week:nth-child(3) { --line-color: #45b7d1; top: 500px; left: 5%; text-align: left; }
+    .week:nth-child(4) { --line-color: #96ceb4; top: 700px; right: 5%; text-align: right; }
+    .week:nth-child(5) { --line-color: #feca57; top: 900px; left: 5%; text-align: left; }
+    .week:nth-child(6) { --line-color: #ff9ff3; top: 1100px; right: 5%; text-align: right; }
+    .week:nth-child(7) { --line-color: #54a0ff; top: 1300px; left: 5%; text-align: left; }
+    .week:nth-child(8) { --line-color: #5f27cd; top: 1500px; right: 5%; text-align: right; }
+    .week:nth-child(9) { --line-color: #00d2d3; top: 1700px; left: 5%; text-align: left; }
+    .week:nth-child(10) { --line-color: #ff9f43; top: 1900px; right: 5%; text-align: right; }
+
+    .week::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 50px;
+      height: 2px;
+      background: var(--line-color);
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .week:nth-child(odd)::after {
+      right: -50px;
+    }
+
+    .week:nth-child(even)::after {
+      left: -50px;
     }
 
     /* Glossy shine */
@@ -124,17 +169,18 @@
 
     .week rect {
       fill: none;
-      stroke: #60a5fa;
-      stroke-width: 2;
+      stroke: var(--line-color);
+      stroke-width: 3;
       stroke-linecap: round;
-      stroke-dasharray: 10 260;
+      stroke-dasharray: 15 250;
       stroke-dashoffset: 0;
       opacity: 0;
+      filter: drop-shadow(0 0 8px var(--line-color));
     }
 
     .week:hover rect {
       opacity: 1;
-      animation: trace-border 3.6s linear infinite;
+      animation: trace-border 2.5s linear infinite;
     }
 
     @keyframes trace-border {
@@ -155,6 +201,11 @@
 
     ul {
       margin-left: 20px;
+    }
+
+    .week:nth-child(even) ul {
+      margin-left: 0;
+      margin-right: 20px;
     }
 
     li {
@@ -282,7 +333,7 @@
   </section>
 
   <footer>
-    <p>© 2026 C++ Course | Hosted on GitHub Pages</p>
+    <p>© 2026 C++ Course | Made with ❤️ CPC, Kishoreganj University</p>
   </footer>
 
   <script>
