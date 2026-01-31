@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C++ Course | Week by Week</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      color: #e5e7eb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      background:
+        linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.85)),
+        url('math.jpg') left center / 320px no-repeat,
+        url('cpc.jpg') right center / 320px no-repeat;
+    }
+    }
+    }
+
+    /* Glass panel behind title */
+    .hero-glass {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.18),
+        rgba(255, 255, 255, 0.05)
+      );
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+      border-radius: 24px;
+      padding: 40px 50px;
+      max-width: 720px;
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 2;
+      position: relative;
+      z-index: 2;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* Glossy glass cards */
+    .week {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.12),
+        rgba(255, 255, 255, 0.02)
+      );
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      margin-bottom: 60px;
+      border-radius: 18px;
+      opacity: 0;
+      transform: translateY(80px) scale(0.95);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Glossy shine */
+    .week::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+      );
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .week:hover::before {
+      opacity: 1;
+    }
+
+    /* Border tracer: dot + trailing line */
+    .week svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .week rect {
+      fill: none;
+      stroke: #60a5fa;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-dasharray: 10 260;
+      stroke-dashoffset: 0;
+      opacity: 0;
+    }
+
+    .week:hover rect {
+      opacity: 1;
+      animation: trace-border 1.6s linear infinite;
+    }
+
+    @keyframes trace-border {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: -260; }
+    }
+
+    .week.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .week h2 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background: #020617;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="hero-glass">
+      <h1>C++ Programming Course</h1>
+      <p>Complete Beginner to Advanced – Week by Week Roadmap</p>
+      <p>Scroll down to explore the course 👇</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="week">
+      <h2>Week 1: Basics & Setup</h2>
+      <ul>
+        <li>What is C++?</li>
+        <li>Compiler & IDE setup</li>
+        <li>Basic input/output (cin, cout)</li>
+        <li>Arithmetic operations</li>
+      </ul>
+    </div>
+
+    <div class="week">
+      <h2>Week 2: Conditions & Logic</h2>
+      <ul>
+        <li>if, if-else statements</li>
+        <li>else-if ladder</li>
+        <li>Nested conditions</li>
+        <li>Logical operators</li>
+      </ul>
+    </div>
+
+    <div class="week">
+      <h2>Week 3: Loops</h2>
+      <ul>
+        <li>for loop</li>
+        <li>while loop</li>
+        <li>do-while loop</li>
+        <li>Loop control (break, continue)</li>
+      </ul>
+    </div>
+
+    <div class="week">
+      <h2>Week 4: Functions</h2>
+      <ul>
+        <li>Function basics</li>
+        <li>Parameters & return values</li>
+        <li>Call by value vs reference</li>
+        <li>Inline functions</li>
+      </ul>
+    </div>
+
+    <div class="week">
+      <h2>Week 5: Arrays & Strings</h2>
+      <ul>
+        <li>1D and 2D arrays</li>
+        <li>Character arrays</li>
+        <li>String class</li>
+        <li>Common string operations</li>
+      </ul>
+    </div>
+
+    <div class="week">
+      <h2>Week 6: Pointers & References</h2>
+      <ul>
+        <li>Pointer basics</li>
+        <li>Pointer arithmetic</li>
+        <li>References</li>
+        <li>Dynamic memory allocation</li>
+      </ul>
+    </div>
+
+    <div class="week">
+      <h2>Week 7: Object-Oriented Programming</h2>
+      <ul>
+        <li>Classes & objects</li>
+        <li>Constructors & destructors</li>
+        <li>Encapsulation</li>
+        <li>Access specifiers</li>
+      </ul>
+    </div>
+
+    <div class="week">
+      <h2>Week 8: Inheritance & Polymorphism</h2>
+      <ul>
+        <li>Inheritance types</li>
+        <li>Method overriding</li>
+        <li>Virtual functions</li>
+        <li>Polymorphism</li>
+      </ul>
+    </div>
+
+    <div class="week">
+      <h2>Week 9: STL (Standard Template Library)</h2>
+      <ul>
+        <li>Vectors, stacks, queues</li>
+        <li>Sets & maps</li>
+        <li>Iterators</li>
+        <li>Algorithms</li>
+      </ul>
+    </div>
+
+    <div class="week">
+      <h2>Week 10: File Handling & Advanced Topics</h2>
+      <ul>
+        <li>File input/output</li>
+        <li>Exception handling</li>
+        <li>Templates</li>
+        <li>Best coding practices</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 C++ Course | Hosted on GitHub Pages</p>
+  </footer>
+
+  <script>
+    // Auto-insert SVG border tracer into each card
+    document.querySelectorAll('.week').forEach(card => {
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '0 0 100 100');
+      svg.setAttribute('preserveAspectRatio', 'none');
+
+      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      rect.setAttribute('x', '1');
+      rect.setAttribute('y', '1');
+      rect.setAttribute('width', '98');
+      rect.setAttribute('height', '98');
+      rect.setAttribute('rx', '18');
+      rect.setAttribute('ry', '18');
+
+      svg.appendChild(rect);
+      card.prepend(svg);
+    });
+
+    const weeks = document.querySelectorAll('.week');
+
+    // Reveal animation
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    weeks.forEach(week => observer.observe(week));
+
+    // Dynamic scroll tilt + depth effect
+    window.addEventListener('scroll', () => {
+      weeks.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const progress = 1 - Math.abs(rect.top - windowHeight / 2) / (windowHeight / 2);
+          const rotate = (1 - progress) * 6;
+          const translate = (1 - progress) * 20;
+
+          card.style.transform = `translateY(${translate}px) rotateX(${rotate}deg)`;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
