@@ -87,7 +87,7 @@
       max-width: 1000px;
       margin: auto;
       position: relative;
-      min-height: 2400px;
+      min-height: 2600px;
     }
 
     section::before {
@@ -95,7 +95,7 @@
       position: absolute;
       left: 50%;
       top: 100px;
-      bottom: 100px;
+      bottom: 600px;
       width: 4px;
       background: linear-gradient(to bottom, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff, #5f27cd, #00d2d3, #ff9f43);
       transform: translateX(-50%);
@@ -236,6 +236,127 @@
       background: #020617;
       color: #9ca3af;
     }
+
+    .special-thanks {
+      position: absolute;
+      top: 2200px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 80%;
+    }
+
+    .special-thanks h2 {
+      color: #93c5fd;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .thanks-cards {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .thanks-card {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.12),
+        rgba(255, 255, 255, 0.02)
+      );
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      width: 40%;
+      max-width: 300px;
+    }
+
+    .thanks-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .thanks-card p {
+      margin: 5px 0;
+    }
+
+    .thanks-card p:first-of-type {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .thanks-card p:last-of-type {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .week {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: 90%;
+        margin: 20px auto;
+        text-align: center;
+      }
+
+      .week:nth-child(even) ul {
+        margin-left: 20px;
+        margin-right: 0;
+      }
+
+      .week::after {
+        display: none;
+      }
+
+      section::before {
+        display: none;
+      }
+
+      .special-thanks {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: 40px;
+      }
+
+      .thanks-cards {
+        flex-direction: column;
+      }
+
+      .thanks-card {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+
+      header {
+        background-size: contain;
+        background-position: center;
+      }
+
+      .hero-glass {
+        padding: 20px;
+      }
+
+      .hero-glass h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        min-height: auto;
+        padding: 50px 20px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -348,6 +469,23 @@
         <li>Best coding practices</li>
       </ul>
     </div>
+
+    <div class="special-thanks">
+      <h2>Special thanks to</h2>
+      <div class="thanks-cards">
+        <div class="thanks-card">
+          <img src="sani.jpg" alt="Md. Sani">
+          <p>Md. Sani</p>
+          <p>President Pi club, Kishoreganj University</p>
+        </div>
+        <div class="thanks-card">
+          <img src="banda.jpg" alt="Md. Mahadi Hasan">
+          <p>Md. Mahadi Hasan</p>
+          <p>President CPC Club, Kishoreganj University</p>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <footer>
